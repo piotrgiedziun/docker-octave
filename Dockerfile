@@ -10,7 +10,9 @@ RUN DEBIAN_FRONTEND=noninteractive apt-get update && apt-get install -y gcc g++ 
     libqrupdate-dev libqscintilla2-dev libqt4-dev libqtcore4 libqtwebkit4 libqt4-network libqtgui4 libqt4-opengl-dev \
     libsuitesparse-dev texlive libxft-dev zlib1g-dev autoconf automake bison flex gperf gzip icoutils \
     librsvg2-bin libtool perl-base rsync tar wget \
- && rm -rf /var/lib/apt/lists/*
+ && rm -rf /var/lib/apt/lists/* /tmp/* /var/tmp/*
+ && apt-get autoclean
+ && apt-get clean
 
 WORKDIR /temp
 
